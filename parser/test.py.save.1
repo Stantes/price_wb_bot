@@ -1,0 +1,12 @@
+import sqlite3
+connection = sqlite3.connect('../cfg/database')
+cursor = connection.cursor()
+def user_exists():
+	with connection:
+	    result = cursor.execute("SELECT user_id FROM `users`").fetchall()
+	    return result
+
+#for i in user_exists():
+#    print(i[0])
+
+url = ""https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$message}""
